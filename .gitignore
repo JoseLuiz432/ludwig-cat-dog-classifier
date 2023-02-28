@@ -127,3 +127,12 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+#ludwig files
+
+.lock_preprocessing
+*.json
+*.parquet
+*.hdf5
+results/
+test_results/
+visualizations/
