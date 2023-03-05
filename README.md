@@ -17,6 +17,9 @@ Activate the env and installing ludwig
 ```
   python -m pip install --upgrade pip &&  python -m pip install ludwig
 ```
+# Dataset
+
+Ludwig can train on any table-like dataset, meaning that every feature has its own column and every example its own row.
 
 # Configuration
 This is a important aspect when using ludwig I put a configuration file in this repository: config.yaml. For more detaled information please see the oficial documentation [Configuration](https://ludwig.ai/latest/configuration/) 
