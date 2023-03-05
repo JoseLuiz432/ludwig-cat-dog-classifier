@@ -25,5 +25,63 @@ output_features:
   - name: label
     type: category
 
+preprocessing:
+    sample_ratio: 1.0
+    oversample_minority: null
+    undersample_majority: null
+    split:
+        type: random
+        probabilities:
+        - 0.8
+        - 0.1
+        - 0.1
+
+
 trainer:
-  epochs: 10
+    learning_rate: 0.001
+    epochs: 10
+    batch_size: auto
+    early_stop: 5
+    optimizer:
+        type: adam
+        betas:
+        - 0.9
+        - 0.999
+        eps: 1.0e-08
+        weight_decay: 0.0
+        amsgrad: false
+    regularization_type: l2
+    use_mixed_precision: false
+    checkpoints_per_epoch: 0
+    regularization_lambda: 0.0
+    train_steps: null
+    steps_per_checkpoint: 0
+    max_batch_size: 1099511627776
+    eval_batch_size: null
+    evaluate_training_set: false
+    validation_field: null
+    validation_metric: null
+    should_shuffle: true
+    increase_batch_size_on_plateau: 0
+    increase_batch_size_on_plateau_patience: 5
+    increase_batch_size_on_plateau_rate: 2.0
+    increase_batch_size_eval_metric: loss
+    increase_batch_size_eval_split: training
+    gradient_clipping:
+        clipglobalnorm: 0.5
+        clipnorm: null
+        clipvalue: null
+    learning_rate_scaling: linear
+    bucketing_field: null
+    learning_rate_scheduler:
+        decay: null
+        decay_rate: 0.96
+        decay_steps: 10000
+        staircase: false
+        reduce_on_plateau: 0
+        reduce_on_plateau_patience: 10
+        reduce_on_plateau_rate: 0.1
+        warmup_evaluations: 0
+        warmup_fraction: 0.0
+        reduce_eval_metric: loss
+        reduce_eval_split: training

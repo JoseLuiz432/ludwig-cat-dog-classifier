@@ -137,3 +137,4 @@ results/
 test_results/
 visualizations/
 .DS_Store/
+predictions/

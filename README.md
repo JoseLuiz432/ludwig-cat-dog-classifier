@@ -24,16 +24,59 @@ This is a important aspect when using ludwig I put a configuration file in this 
 # Train
 
 Ludwig train command:
-```
+```bash
 ludwig train \
   --dataset cats-dogs.csv \
   --config config.yaml
 ```
 # Evaluate
 
+Ludwig evaluate command:
+```bash
+ludwig evaluate --model_path results/experiment_run_1/model \
+                 --dataset cats-dogs.csv \
+                 --split test \
+                 --output_directory test_results
+```
 # Visualize Metrics
 
+Do some matrix like confusion matrix
+```bash
+ludwig visualize --visualization confusion_matrix \
+                  --ground_truth_metadata results/experiment_run_1/model/training_set_metadata.json \
+                  --test_statistics test_results/test_statistics.json \
+                  --output_directory visualizations \
+                  --file_format png
+```
+![alt text](./visualizations/confusion_matrix__label_top2.png)
+
+![alt text](./visualizations/confusion_matrix_entropy__label_top2.png)
+
+Generate some learing curves
+```bash
+ludwig visualize --visualization learning_curves \
+                  --ground_truth_metadata results/experiment_run/model/training_set_metadata.json \
+                  --training_statistics results/experiment_run/training_statistics.json \
+                  --file_format png \
+                  --output_directory visualizations
+```
+![alt text](./visualizations/learning_curves_combined_loss.png)
+
+![alt text](./visualizations/learning_curves_label_accuracy.png)
+
+![alt text](./visualizations/learning_curves_label_loss.png)
+
+
+As you can notice the model is not so good and is very overfited. Fell free to improve this model adding some dropout and other things. It's only a example of how to use.
+
+
 # Predictions
+```
+ludwig predict --model_path results/experiment_run/model \
+                --dataset cats-dogs.csv \
+                --split test \
+                --output_directory predictions
+```
 
 
 # Using pretrained model 

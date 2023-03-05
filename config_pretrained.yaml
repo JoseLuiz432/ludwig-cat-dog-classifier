@@ -1,0 +1,16 @@
+input_features:
+  - name: path
+    type: image
+    encoder:
+      type: alexnet
+      use_pretrained: true
+      trainable: true
+      model_cache_dir: null
+      model_variant: base
+
+output_features:
+  - name: label
+    type: category
+
+trainer:
+  epochs: 10
