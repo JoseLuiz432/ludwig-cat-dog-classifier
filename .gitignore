@@ -135,6 +135,5 @@ dmypy.json
 *.hdf5
 results/
 test_results/
-visualizations/
 .DS_Store/
 predictions/
