@@ -34,3 +34,8 @@ ludwig train \
 # Visualize Metrics
 
 # Predictions
+
+
+# Using pretrained model 
+
+You can find all available Pretrained models at (here)[https://ludwig.ai/latest/configuration/features/image_features/]. To use this models you can add the model you want inside the config file as config_pretrained.yaml I put in this repo.

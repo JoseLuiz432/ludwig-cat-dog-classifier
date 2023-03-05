@@ -4,18 +4,23 @@ input_features:
     encoder: 
         type: stacked_cnn
         conv_layers:
-          - num_filters: 32
-            filter_size: 3
-            pool_size: 2
-            pool_stride: 2
-          - num_filters: 64
-            filter_size: 3
-            pool_size: 2
-            pool_stride: 2
-            dropout: 0.4
+          - out_channels: 64
+            padding: same
+            conv_norm: batch
+            kernel_size: 3
+            conv_activation: relu
+            pool_function: max
+          - out_channels: 128
+            kernel_size: 3
+            conv_norm: batch
+            padding: same
+            conv_activation: relu
+            pool_function: max
         fc_layers:
-          - output_size: 128
-            dropout: 0.4
+          - output_size: 256
+            conv_activation: relu
+          - output_size: 2
+            conv_activation: softmax
 output_features:
   - name: label
     type: category

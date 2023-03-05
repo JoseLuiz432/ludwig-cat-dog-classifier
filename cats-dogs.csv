@@ -1,4 +1,4 @@
-path,label,split,0
+path,label,split
 ./dataset/cats-dogs-small/Cat/63.jpg,cat,0
 ./dataset/cats-dogs-small/Cat/77.jpg,cat,0
 ./dataset/cats-dogs-small/Cat/88.jpg,cat,0

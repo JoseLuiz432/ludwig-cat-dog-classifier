@@ -136,3 +136,4 @@ dmypy.json
 results/
 test_results/
 visualizations/
+.DS_Store/
