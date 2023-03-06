@@ -1,7 +1,6 @@
 # ludwig-cat-dog-classifier
-An example how to use ludwig AutoML to classify images.
+An example how to use ludwig to classify images.
 
-[What is AutoML?](https://en.wikipedia.org/wiki/Automated_machine_learning)
 
 [What is Ludwig?](https://ludwig.ai/late)
 
