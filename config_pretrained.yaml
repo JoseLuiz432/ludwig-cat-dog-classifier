@@ -1,7 +1,7 @@
 model_definition:
   input_features:
     -
-      name: image
+      name: path
       type: image
       encoder: resnet
       preprocessor:
