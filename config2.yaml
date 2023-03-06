@@ -1,0 +1,29 @@
+input_features:
+    - name: path
+      type: image
+      encoder: stacked_cnn
+      preprocessor:
+          height: 128
+          width: 128
+          resize_method: crop_or_pad
+          normalization: imagenet
+
+output_features:
+  - name: label
+    type: category
+
+training:
+    batch_size: 32
+    epochs: 50
+    early_stop: 5
+    metric: loss
+    patience: 5
+
+evaluation:
+    validation_metrics:
+        - name: accuracy
+
+combiner:
+    type: concat
+    num_fc_layers: 2
+    fc_size: 64
