@@ -1,6 +1,10 @@
 input_features:
   - name: path
     type: image
+    preprocessor:
+        height: 224
+        width: 224
+        normalization: imagenet
     encoder: 
         type: stacked_cnn
         conv_layers:
@@ -35,7 +39,7 @@ preprocessing:
         - 0.8
         - 0.1
         - 0.1
-
+        
 trainer:
     learning_rate: 0.001
     epochs: 10
