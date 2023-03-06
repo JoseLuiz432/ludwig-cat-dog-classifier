@@ -1,16 +1,31 @@
-input_features:
-  - name: path
-    type: image
-    encoder:
-      type: alexnet
-      use_pretrained: true
-      trainable: true
-      model_cache_dir: null
-      model_variant: base
+model_definition:
+  input_features:
+    -
+      name: image
+      type: image
+      encoder: resnet
+      preprocessor:
+        height: 224
+        width: 224
+        normalization: imagenet
+  output_features:
+    -
+      name: class
+      type: category
 
-output_features:
-  - name: label
-    type: category
-
-trainer:
+training:
+  batch_size: 32
   epochs: 10
+  early_stop:
+    metric: loss
+    patience: 5
+
+pretrained_model:
+  type: resnet_v2_50
+  pretrained: true
+  freeze: true
+
+combiner:
+  type: concat
+  fc_size: 64
+  num_fc_layers: 2
